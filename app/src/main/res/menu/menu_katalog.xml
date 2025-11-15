@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- Item for Settings/Profile -->
+    <item
+        android:id="@+id/action_settings"
+        android:title="Settings"
+        android:icon="@android:drawable/ic_menu_preferences"
+        app:showAsAction="ifRoom" />
+
+    <!-- Item for Seller Dashboard -->
+    <item
+        android:id="@+id/action_dashboard"
+        android:title="Dashboard"
+        android:icon="@android:drawable/ic_menu_sort_by_size"
+        app:showAsAction="ifRoom" />
+
+</menu>

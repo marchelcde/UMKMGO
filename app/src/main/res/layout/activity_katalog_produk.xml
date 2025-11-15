@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".KatalogProdukActivity">
+
+    <!-- This parent layout allows the FloatingActionButton to overlap the RecyclerView -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- Search View for searching products -->
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/search_view_katalog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:queryHint="Cari produk..."
+            app:iconifiedByDefault="false"
+            android:layout_margin="8dp" />
+
+        <!-- TODO: Add a ChipGroup here for category filters if needed -->
+
+        <!-- RecyclerView to display the product grid -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view_katalog"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:padding="4dp"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:spanCount="2"
+            tools:listitem="@layout/item_produk" /> <!-- tools:listitem requires item_produk.xml -->
+
+        <!-- Text view to show when the catalog is empty -->
+        <TextView
+            android:id="@+id/tv_status_katalog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Belum ada produk yang tersedia."
+            android:gravity="center"
+            android:visibility="gone"
+            android:padding="16dp"/>
+    </LinearLayout>
+
+    <!-- Floating Action Button for adding products (for sellers) -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_tambah_produk"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        android:src="@android:drawable/ic_input_add"
+        app:tint="@android:color/white"
+        android:contentDescription="Tambah Produk"
+        android:visibility="gone"
+        tools:visibility="visible"/> <!-- tools:visibility makes it visible in the preview -->
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
