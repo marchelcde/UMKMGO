@@ -78,7 +78,7 @@ class _LoginPageState extends State<LoginPage> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                const Text("Don't have an account?"),
+                const Text("Belum punya akun?"),
                 TextButton(
                   onPressed: () {
                     Navigator.push(
